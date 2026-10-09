@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Dheeraj Dev · DevOps Engineer</title>
+
+    <!-- ============ FAVICON (inline SVG — no extra file) ============ -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300d4ff'/%3E%3Cstop offset='1' stop-color='%237b2ffc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230a0e17'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='central' font-family='Segoe UI, sans-serif' font-weight='800' font-size='38' fill='url(%23g)'%3ED%3C/text%3E%3C/svg%3E" />
+
+    <!-- Fallback for older browsers -->
+    <link rel="alternate icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e17'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='central' font-family='Segoe UI, sans-serif' font-weight='800' font-size='38' fill='%2300d4ff'%3ED%3C/text%3E%3C/svg%3E" />
+
+    <title>Dheeraj Dev · Cloud DevOps Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <style>
         /* ---------- RESET & BASE ---------- */
@@ -18,7 +25,6 @@
             --accent-2: #7b2ffc;
             --accent-gradient: linear-gradient(135deg, #00d4ff, #7b2ffc);
             --card-bg: rgba(17, 25, 39, 0.7);
-            --border-glow: rgba(0, 212, 255, 0.12);
             --shadow-glow: 0 8px 32px rgba(0, 212, 255, 0.06);
         }
 
@@ -31,7 +37,7 @@
             overflow-x: hidden;
         }
 
-        /* ---------- ANIMATED BACKGROUND (Enhanced) ---------- */
+        /* ---------- ANIMATED BACKGROUND ---------- */
         .bg-canvas {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: 0; pointer-events: none; overflow: hidden;
@@ -42,7 +48,8 @@
         }
         .orb-1 { width: 500px; height: 500px; background: #00d4ff; top: -10%; left: -10%; }
         .orb-2 { width: 400px; height: 400px; background: #7b2ffc; bottom: -10%; right: -10%; animation-delay: -7s; }
-        .orb-3 { width: 300px; height: 300px; background: #ff6b6b; top: 40%; left: 60%; animation-delay: -14s; opacity: 0.12; }
+        .orb-3 { width: 300px; height: 300px; background: #326ce5; top: 40%; left: 60%; animation-delay: -14s; opacity: 0.12; }
+        .orb-4 { width: 250px; height: 250px; background: #2496ed; top: 70%; left: 10%; animation-delay: -19s; opacity: 0.10; }
 
         @keyframes orbFloat {
             0% { transform: translate(0, 0) scale(1); }
@@ -51,13 +58,9 @@
             100% { transform: translate(50px, -30px) scale(1.05); }
         }
 
-        /* Floating orbs trail effect */
         .orb-trail {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.08;
-            animation: trailFloat 15s ease-in-out infinite alternate;
+            position: absolute; border-radius: 50%; filter: blur(60px);
+            opacity: 0.08; animation: trailFloat 15s ease-in-out infinite alternate;
         }
         .orb-trail-1 { width: 200px; height: 200px; background: #00d4ff; top: 20%; left: 30%; animation-delay: -3s; }
         .orb-trail-2 { width: 180px; height: 180px; background: #7b2ffc; bottom: 30%; right: 25%; animation-delay: -8s; }
@@ -80,12 +83,11 @@
         /* ---------- CONTAINER & HEADER ---------- */
         .container { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 24px 60px; }
         .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.04); flex-wrap: wrap; gap: 12px; }
-        .logo { 
-            font-size: 1.5rem; font-weight: 800; 
-            background: var(--accent-gradient); 
-            -webkit-background-clip: text; 
+        .logo {
+            font-size: 1.5rem; font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
             animation: logoGlow 3s ease-in-out infinite;
         }
         @keyframes logoGlow {
@@ -94,45 +96,40 @@
         }
 
         .nav-links { display: flex; gap: 24px; font-size: 0.9rem; font-weight: 500; flex-wrap: wrap; }
-        .nav-links a { 
-            color: var(--text-secondary); 
-            text-decoration: none; 
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
             transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
-            position: relative; 
+            position: relative;
         }
-        .nav-links a::after { 
-            content: ''; position: absolute; bottom: -4px; left: 0; 
-            width: 0%; height: 2px; 
-            background: var(--accent-gradient); 
-            transition: width 0.4s ease; 
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0%; height: 2px;
+            background: var(--accent-gradient);
+            transition: width 0.4s ease;
         }
-        .nav-links a:hover { 
-            color: #fff; 
-            transform: translateY(-2px) scale(1.02);
-        }
+        .nav-links a:hover { color: #fff; transform: translateY(-2px) scale(1.02); }
         .nav-links a:hover::after { width: 100%; }
 
-        /* ---------- HERO WITH PHOTO ---------- */
-        .hero { display: flex; align-items: center; gap: 48px; padding: 40px 0 30px; flex-wrap: wrap; }
-        .hero-content { flex: 2; min-width: 280px; animation: fadeUp 0.9s ease forwards; }
-        .hero-photo { flex: 0 0 180px; animation: fadeUp 1s ease forwards; }
+        /* ---------- HERO ---------- */
+        .hero { padding: 48px 0 36px; max-width: 820px; animation: fadeUp 0.9s ease forwards; }
 
-        @keyframes fadeUp { 
-            0% { opacity: 0; transform: translateY(30px) scale(0.95); } 
-            100% { opacity: 1; transform: translateY(0) scale(1); } 
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(30px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        .hero-badge { 
-            display: inline-block; 
-            background: rgba(0, 212, 255, 0.08); 
-            border: 1px solid rgba(0, 212, 255, 0.18); 
-            padding: 5px 18px; 
-            border-radius: 50px; 
-            font-size: 0.75rem; 
-            color: var(--accent-1); 
-            letter-spacing: 1px; 
-            text-transform: uppercase; 
-            margin-bottom: 12px; 
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.18);
+            padding: 5px 18px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: var(--accent-1);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
             backdrop-filter: blur(4px);
             animation: badgePulse 3s ease-in-out infinite;
         }
@@ -141,11 +138,12 @@
             50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.15); }
         }
 
-        .hero h1 { 
-            font-size: clamp(2.2rem, 6vw, 4rem); 
-            font-weight: 800; 
-            line-height: 1.1; 
-            margin-bottom: 6px;
+        .hero h1 {
+            font-size: clamp(2.4rem, 6vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
             animation: titleReveal 1.2s ease forwards;
         }
         @keyframes titleReveal {
@@ -153,12 +151,10 @@
             100% { opacity: 1; transform: translateX(0); }
         }
 
-        .hero h1 .highlight { 
-            background: var(--accent-gradient); 
-            -webkit-background-clip: text; 
+        .hero h1 .highlight {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
-            display: inline-block;
             animation: shimmer 4s ease-in-out infinite;
         }
         @keyframes shimmer {
@@ -166,208 +162,126 @@
             50% { filter: brightness(1.3); }
         }
 
-        .hero .subtitle { 
-            font-size: 1.1rem; 
-            color: var(--text-secondary); 
-            margin-bottom: 6px;
-            animation: slideIn 1s ease forwards;
-            animation-delay: 0.3s;
-            opacity: 0;
-        }
-        @keyframes slideIn {
-            0% { opacity: 0; transform: translateX(-30px); }
-            100% { opacity: 1; transform: translateX(0); }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-1);
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
         }
 
-        .hero .tagline { 
-            color: var(--text-secondary); 
-            font-size: 1rem; 
-            max-width: 520px; 
-            margin-bottom: 20px;
-            animation: slideIn 1s ease forwards;
-            animation-delay: 0.5s;
-            opacity: 0;
+        .hero .tagline {
+            color: var(--text-secondary);
+            font-size: 1.02rem;
+            max-width: 640px;
+            margin-bottom: 26px;
         }
 
-        .hero-buttons { 
-            display: flex; 
-            gap: 14px; 
+        /* ---------- CONTACT BAR ---------- */
+        .contact-bar {
+            display: flex;
             flex-wrap: wrap;
-            animation: slideIn 1s ease forwards;
-            animation-delay: 0.7s;
-            opacity: 0;
+            gap: 10px 22px;
+            margin-bottom: 22px;
+            padding: 16px 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 14px;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-glow);
         }
-
-        /* ----- PHOTO CIRCLE (Enhanced) ----- */
-        .photo-circle {
-            width: 180px; height: 180px; border-radius: 50%;
-            background: var(--accent-gradient); padding: 4px;
-            box-shadow: 0 0 60px rgba(0, 212, 255, 0.15);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            animation: floatGlow 6s ease-in-out infinite, photoEntrance 1s ease forwards;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .photo-circle:hover { 
-            transform: scale(1.04) rotate(2deg); 
-            box-shadow: 0 0 80px rgba(0, 212, 255, 0.25); 
-        }
-
-        @keyframes floatGlow { 
-            0% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.1), 0 0 80px rgba(123, 47, 252, 0.05); } 
-            50% { box-shadow: 0 0 70px rgba(123, 47, 252, 0.2), 0 0 120px rgba(0, 212, 255, 0.1); } 
-            100% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.1), 0 0 80px rgba(123, 47, 252, 0.05); } 
-        }
-
-        @keyframes photoEntrance {
-            0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
-            100% { opacity: 1; transform: scale(1) rotate(0deg); }
-        }
-
-        .photo-circle img {
-            width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;
-            background: var(--bg-secondary);
-            filter: saturate(1.1) contrast(1.05) brightness(1.05) hue-rotate(15deg);
-            mask-image: radial-gradient(circle, black 60%, transparent 100%);
-            -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
-        }
-
-        /* Ring animation around photo */
-        .photo-circle::before {
-            content: '';
-            position: absolute;
-            top: -3px; left: -3px; right: -3px; bottom: -3px;
-            border-radius: 50%;
-            border: 2px solid transparent;
-            border-top-color: var(--accent-1);
-            border-right-color: var(--accent-2);
-            animation: spinRing 8s linear infinite;
-            opacity: 0.4;
-        }
-        @keyframes spinRing {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .photo-circle::after {
-            content: '';
-            position: absolute;
-            top: -6px; left: -6px; right: -6px; bottom: -6px;
-            border-radius: 50%;
-            border: 1px solid transparent;
-            border-bottom-color: var(--accent-1);
-            border-left-color: var(--accent-2);
-            animation: spinRing 12s linear infinite reverse;
-            opacity: 0.2;
-        }
-
-        .photo-circle .initials { 
-            width: 100%; height: 100%; border-radius: 50%; 
-            background: var(--bg-secondary); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 3.5rem; 
-            font-weight: 800; 
-            color: var(--accent-1); 
-        }
-
-        /* ----- BUTTONS (Enhanced) ----- */
-        .btn { 
-            padding: 12px 30px; 
-            border-radius: 60px; 
-            font-weight: 600; 
-            text-decoration: none; 
-            font-size: 0.95rem; 
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2); 
-            border: none; 
-            cursor: pointer; 
-            display: inline-flex; 
-            align-items: center; 
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
             gap: 8px;
-            position: relative;
-            overflow: hidden;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .contact-item:hover {
+            color: var(--accent-1);
+            transform: translateY(-2px);
+        }
+        .contact-item i {
+            color: var(--accent-1);
+            font-size: 0.95rem;
+            width: 16px;
+            text-align: center;
+        }
+
+        .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+        /* ---------- BUTTONS ---------- */
+        .btn {
+            padding: 12px 30px; border-radius: 60px;
+            font-weight: 600; text-decoration: none; font-size: 0.95rem;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+            border: none; cursor: pointer;
+            display: inline-flex; align-items: center; gap: 8px;
+            position: relative; overflow: hidden;
         }
         .btn::after {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%;
-            width: 0; height: 0;
-            border-radius: 50%;
+            content: ''; position: absolute; top: 50%; left: 50%;
+            width: 0; height: 0; border-radius: 50%;
             background: rgba(255, 255, 255, 0.15);
             transform: translate(-50%, -50%);
             transition: width 0.6s ease, height 0.6s ease;
         }
-        .btn:hover::after {
-            width: 300px;
-            height: 300px;
+        .btn:hover::after { width: 300px; height: 300px; }
+        .btn-primary {
+            background: var(--accent-gradient); color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.2);
         }
-        .btn-primary { 
-            background: var(--accent-gradient); 
-            color: #fff; 
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.2); 
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 36px rgba(0, 212, 255, 0.4);
         }
-        .btn-primary:hover { 
-            transform: translateY(-3px) scale(1.02); 
-            box-shadow: 0 8px 36px rgba(0, 212, 255, 0.4); 
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid rgba(255,255,255,0.12);
+            color: var(--text-primary);
         }
-        .btn-outline { 
-            background: transparent; 
-            border: 1.5px solid rgba(255,255,255,0.12); 
-            color: var(--text-primary); 
+        .btn-outline:hover {
+            border-color: var(--accent-1);
+            background: rgba(0, 212, 255, 0.04);
+            transform: translateY(-3px);
         }
-        .btn-outline:hover { 
-            border-color: var(--accent-1); 
-            background: rgba(0, 212, 255, 0.04); 
-            transform: translateY(-3px); 
+        .btn-download {
+            background: rgba(123, 47, 252, 0.15);
+            border: 1.5px solid rgba(123, 47, 252, 0.3);
+            color: #fff;
         }
-        .btn-download { 
-            background: rgba(123, 47, 252, 0.15); 
-            border: 1.5px solid rgba(123, 47, 252, 0.3); 
-            color: #fff; 
-        }
-        .btn-download:hover { 
-            background: rgba(123, 47, 252, 0.25); 
-            border-color: var(--accent-2); 
-            transform: translateY(-3px) scale(1.02); 
+        .btn-download:hover {
+            background: rgba(123, 47, 252, 0.25);
+            border-color: var(--accent-2);
+            transform: translateY(-3px) scale(1.02);
         }
 
-        /* ---------- STATS (Enhanced) ---------- */
-        .stats { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
-            gap: 16px; 
-            background: var(--card-bg); 
-            backdrop-filter: blur(12px); 
-            border: 1px solid rgba(255,255,255,0.04); 
-            border-radius: 20px; 
-            padding: 24px 16px; 
-            margin: 10px 0 40px; 
-            text-align: center; 
+        /* ---------- STATS ---------- */
+        .stats {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 16px; background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 20px; padding: 24px 16px;
+            margin: 10px 0 40px; text-align: center;
             box-shadow: var(--shadow-glow);
             animation: statsEntrance 1.2s ease forwards;
-            animation-delay: 0.5s;
-            opacity: 0;
+            animation-delay: 0.4s; opacity: 0;
         }
         @keyframes statsEntrance {
             0% { opacity: 0; transform: translateY(40px) scale(0.95); }
             100% { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        .stat-item { 
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-        .stat-item:hover {
-            transform: translateY(-5px) scale(1.05);
-        }
+        .stat-item { position: relative; transition: transform 0.3s ease; }
+        .stat-item:hover { transform: translateY(-5px) scale(1.05); }
 
-        .stat-item .number { 
-            font-size: 2rem; 
-            font-weight: 800; 
-            background: var(--accent-gradient); 
-            -webkit-background-clip: text; 
+        .stat-item .number {
+            font-size: 2rem; font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
             animation: countFloat 3s ease-in-out infinite;
@@ -377,27 +291,17 @@
             50% { transform: translateY(-4px); }
         }
 
-        .stat-item .label { 
-            font-size: 0.8rem; 
-            color: var(--text-secondary);
-            display: block;
-        }
+        .stat-item .label { font-size: 0.8rem; color: var(--text-secondary); display: block; }
 
         /* ---------- SECTIONS ---------- */
-        .section-title { 
-            font-size: clamp(1.6rem, 3.5vw, 2.4rem); 
-            font-weight: 700; 
-            margin-bottom: 6px;
-            position: relative;
-            display: inline-block;
+        .section-title {
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            font-weight: 700; margin-bottom: 6px;
+            position: relative; display: inline-block;
         }
         .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 60px;
-            height: 3px;
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 60px; height: 3px;
             background: var(--accent-gradient);
             border-radius: 4px;
             animation: titleUnderline 2s ease-in-out infinite;
@@ -407,251 +311,254 @@
             50% { width: 100px; opacity: 0.7; }
         }
 
-        .section-sub { 
-            color: var(--text-secondary); 
-            margin-bottom: 32px; 
-        }
+        .section-sub { color: var(--text-secondary); margin-bottom: 32px; }
 
-        /* ---------- EXPERIENCE (Enhanced) ---------- */
-        .exp-card { 
-            background: var(--card-bg); 
-            backdrop-filter: blur(8px); 
-            border: 1px solid rgba(255,255,255,0.04); 
-            border-radius: 18px; 
-            padding: 24px 28px; 
-            margin-bottom: 20px; 
-            box-shadow: var(--shadow-glow); 
-            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2); 
-            position: relative; 
-            overflow: hidden;
+        /* ---------- TECH STACK BANNER ---------- */
+        .stack-banner {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 212, 255, 0.08);
+            border-radius: 20px;
+            padding: 24px 20px;
+            margin: 0 0 40px;
+            text-align: center;
+            box-shadow: var(--shadow-glow);
         }
-        .exp-card::before { 
-            content: ''; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 4px; 
-            height: 100%; 
-            background: var(--accent-gradient); 
+        .stack-banner h3 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+        .stack-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 32px;
+            justify-content: center;
+            align-items: center;
+        }
+        .stack-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+            cursor: pointer;
+        }
+        .stack-icon:hover { transform: translateY(-6px) scale(1.1); }
+        .stack-icon i { font-size: 2.2rem; transition: filter 0.4s ease; }
+        .stack-icon:hover i { filter: drop-shadow(0 0 12px currentColor); }
+        .stack-icon .name {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .stack-icon:hover .name { color: var(--text-primary); }
+
+        .si-docker i { color: #2496ed; }
+        .si-k8s i { color: #326ce5; }
+        .si-k3s i { color: #ffc61c; }
+        .si-helm i { color: #0f1689; }
+        .si-github i { color: #ffffff; }
+        .si-gha i { color: #7b2ffc; }
+        .si-jenkins i { color: #d33833; }
+        .si-azure i { color: #0078d4; }
+        .si-aws i { color: #ff9900; }
+        .si-terraform i { color: #7b42bc; }
+        .si-ansible i { color: #ee0000; }
+        .si-prometheus i { color: #e6522c; }
+        .si-grafana i { color: #f46800; }
+        .si-linux i { color: #fcc624; }
+        .si-nginx i { color: #009639; }
+        .si-mysql i { color: #4479a1; }
+
+        /* ---------- EXPERIENCE ---------- */
+        .exp-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 18px;
+            padding: 24px 28px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-glow);
+            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+            position: relative; overflow: hidden;
+        }
+        .exp-card::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: var(--accent-gradient);
             border-radius: 4px 0 0 4px;
             transition: width 0.4s ease;
         }
-        .exp-card:hover::before {
-            width: 6px;
+        .exp-card:hover::before { width: 6px; }
+        .exp-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            border-color: rgba(0, 212, 255, 0.1);
+            box-shadow: 0 16px 48px rgba(0, 212, 255, 0.06);
         }
-        .exp-card:hover { 
-            transform: translateY(-6px) scale(1.01); 
-            border-color: rgba(0, 212, 255, 0.1); 
-            box-shadow: 0 16px 48px rgba(0, 212, 255, 0.06); 
-        }
-        .exp-header { 
-            display: flex; 
-            justify-content: space-between; 
-            flex-wrap: wrap; 
-            gap: 6px 16px; 
-            margin-bottom: 4px; 
+        .exp-header {
+            display: flex; justify-content: space-between;
+            flex-wrap: wrap; gap: 6px 16px; margin-bottom: 4px;
         }
         .exp-header h3 { font-size: 1.2rem; font-weight: 700; }
         .exp-header .company { color: var(--accent-1); font-weight: 600; }
         .exp-header .date { color: var(--text-secondary); font-size: 0.85rem; }
-        .exp-tags { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 6px; 
-            margin: 10px 0; 
-        }
-        .exp-tags span { 
-            background: rgba(0, 212, 255, 0.05); 
-            border: 1px solid rgba(0, 212, 255, 0.07); 
-            padding: 3px 14px; 
-            border-radius: 40px; 
-            font-size: 0.7rem; 
-            color: var(--text-secondary); 
-            letter-spacing: 0.3px;
+        .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+        .exp-tags span {
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.07);
+            padding: 3px 14px; border-radius: 40px;
+            font-size: 0.7rem; color: var(--text-secondary);
             transition: all 0.3s ease;
         }
         .exp-tags span:hover {
             background: rgba(0, 212, 255, 0.12);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.05);
         }
         .exp-card ul { list-style: none; padding: 0; }
-        .exp-card ul li { 
-            padding: 3px 0 3px 22px; 
-            position: relative; 
-            color: var(--text-secondary); 
-            font-size: 0.92rem;
+        .exp-card ul li {
+            padding: 3px 0 3px 22px; position: relative;
+            color: var(--text-secondary); font-size: 0.92rem;
             transition: all 0.3s ease;
         }
-        .exp-card ul li::before { 
-            content: '▹'; 
-            position: absolute; 
-            left: 0; 
+        .exp-card ul li::before {
+            content: '▹'; position: absolute; left: 0;
             color: var(--accent-1);
             transition: transform 0.3s ease;
         }
-        .exp-card ul li:hover::before {
-            transform: translateX(4px) scale(1.2);
-        }
+        .exp-card ul li:hover::before { transform: translateX(4px) scale(1.2); }
         .exp-card ul li:hover {
             color: var(--text-primary);
             transform: translateX(4px);
         }
 
-        /* ---------- SKILLS (Enhanced) ---------- */
-        .skills-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
-            gap: 14px; 
-            margin: 16px 0 32px; 
+        /* ---------- SKILLS ---------- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 14px; margin: 16px 0 32px;
         }
-        .skill-chip { 
-            background: var(--card-bg); 
-            backdrop-filter: blur(6px); 
-            border: 1px solid rgba(255,255,255,0.04); 
-            border-radius: 14px; 
-            padding: 14px 10px; 
-            text-align: center; 
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2); 
+        .skill-chip {
+            background: var(--card-bg);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 14px; padding: 14px 10px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
             box-shadow: var(--shadow-glow);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
-        .skill-chip::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.6s ease;
-            pointer-events: none;
+        .skill-chip:hover {
+            transform: translateY(-6px) scale(1.03);
+            border-color: rgba(0, 212, 255, 0.2);
+            box-shadow: 0 12px 32px rgba(0, 212, 255, 0.08);
         }
-        .skill-chip:hover::before {
-            opacity: 1;
-        }
-        .skill-chip:hover { 
-            transform: translateY(-6px) scale(1.03); 
-            border-color: rgba(0, 212, 255, 0.2); 
-            box-shadow: 0 12px 32px rgba(0, 212, 255, 0.08); 
-        }
-        .skill-chip i { 
-            font-size: 1.7rem; 
-            margin-bottom: 4px; 
+        .skill-chip i {
+            font-size: 1.7rem; margin-bottom: 4px;
             color: var(--accent-1);
             transition: transform 0.4s ease;
         }
-        .skill-chip:hover i {
-            transform: scale(1.2) rotate(-5deg);
-        }
-        .skill-chip .name { font-weight: 600; font-size: 0.8rem; }
-        .skill-chip .cat { font-size: 0.65rem; color: var(--text-secondary); }
+        .skill-chip:hover i { transform: scale(1.2) rotate(-5deg); }
+        .skill-chip .name { font-weight: 600; font-size: 0.85rem; }
+        .skill-chip .cat { font-size: 0.68rem; color: var(--text-secondary); }
 
-        /* ---------- PROJECTS (Enhanced) ---------- */
-        .project-card { 
-            background: var(--card-bg); 
-            backdrop-filter: blur(8px); 
-            border: 1px solid rgba(255,255,255,0.04); 
-            border-radius: 18px; 
-            padding: 20px 24px; 
-            margin-bottom: 16px; 
-            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2); 
+        /* ---------- PROJECTS ---------- */
+        .project-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 18px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2);
             box-shadow: var(--shadow-glow);
             position: relative;
         }
         .project-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 50%;
+            content: ''; position: absolute; bottom: 0; left: 50%;
             width: 0; height: 2px;
             background: var(--accent-gradient);
             transition: all 0.5s ease;
             transform: translateX(-50%);
         }
-        .project-card:hover::after {
-            width: 80%;
+        .project-card:hover::after { width: 80%; }
+        .project-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            border-color: rgba(123, 47, 252, 0.15);
         }
-        .project-card:hover { 
-            transform: translateY(-5px) scale(1.01); 
-            border-color: rgba(123, 47, 252, 0.15); 
+        .project-card .badge-featured {
+            position: absolute;
+            top: 16px; right: 16px;
+            background: var(--accent-gradient);
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
         }
-        .project-card h4 { 
-            font-size: 1.1rem; 
-            margin-bottom: 2px;
+        .project-card h4 {
+            font-size: 1.15rem; margin-bottom: 6px;
             transition: color 0.3s ease;
         }
-        .project-card:hover h4 {
+        .project-card:hover h4 { color: var(--accent-1); }
+        .project-card .tech-stack {
             color: var(--accent-1);
+            font-size: 0.78rem;
+            margin-bottom: 10px;
+            font-family: 'Consolas', monospace;
+            letter-spacing: 0.3px;
+            line-height: 1.6;
         }
-        .project-card .tech-stack { 
-            color: var(--accent-1); 
-            font-size: 0.8rem; 
-            margin-bottom: 6px; 
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.94rem;
+            line-height: 1.75;
         }
-        .project-card p { color: var(--text-secondary); font-size: 0.92rem; }
 
-        /* ---------- ACHIEVEMENTS (Enhanced) ---------- */
-        .achievement-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 14px; 
-            margin: 16px 0 32px; 
+        /* ---------- ACHIEVEMENTS ---------- */
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px; margin: 16px 0 32px;
         }
-        .achieve-item { 
-            background: var(--card-bg); 
-            backdrop-filter: blur(6px); 
-            border: 1px solid rgba(255,255,255,0.04); 
-            border-radius: 14px; 
-            padding: 18px 14px; 
-            text-align: center; 
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2); 
-            position: relative;
-            overflow: hidden;
+        .achieve-item {
+            background: var(--card-bg);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 14px; padding: 18px 14px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+            position: relative; overflow: hidden;
         }
-        .achieve-item::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, rgba(0, 212, 255, 0.03), transparent 70%);
-            opacity: 0;
-            transition: opacity 0.6s ease;
+        .achieve-item:hover {
+            transform: translateY(-4px) scale(1.02);
+            border-color: rgba(0, 212, 255, 0.12);
         }
-        .achieve-item:hover::before {
-            opacity: 1;
-        }
-        .achieve-item:hover { 
-            transform: translateY(-4px) scale(1.02); 
-            border-color: rgba(0, 212, 255, 0.12); 
-        }
-        .achieve-item i { 
-            font-size: 1.6rem; 
-            color: var(--accent-2); 
+        .achieve-item i {
+            font-size: 1.6rem; color: var(--accent-2);
             margin-bottom: 4px;
             transition: transform 0.4s ease;
         }
-        .achieve-item:hover i {
-            transform: scale(1.2) rotate(-10deg);
-        }
+        .achieve-item:hover i { transform: scale(1.2) rotate(-10deg); }
         .achieve-item .value { font-weight: 700; font-size: 1rem; }
         .achieve-item .desc { font-size: 0.8rem; color: var(--text-secondary); }
 
-        /* ---------- CERTIFICATIONS (Enhanced) ---------- */
-        .certs { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 14px; 
-            margin: 8px 0 20px; 
-        }
-        .cert-badge { 
-            background: var(--card-bg); 
-            backdrop-filter: blur(6px); 
-            border: 1px solid rgba(255,255,255,0.04); 
-            border-radius: 40px; 
-            padding: 6px 20px; 
-            font-size: 0.85rem; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 8px; 
+        /* ---------- CERTIFICATIONS ---------- */
+        .certs { display: flex; flex-wrap: wrap; gap: 14px; margin: 8px 0 20px; }
+        .cert-badge {
+            background: var(--card-bg);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 40px;
+            padding: 6px 20px;
+            font-size: 0.85rem;
+            display: inline-flex; align-items: center; gap: 8px;
             color: var(--text-secondary);
             transition: all 0.3s ease;
         }
@@ -663,86 +570,64 @@
         .cert-badge i { color: var(--accent-1); font-size: 0.9rem; }
 
         /* ---------- FOOTER ---------- */
-        .footer { 
-            border-top: 1px solid rgba(255,255,255,0.04); 
-            padding: 28px 0 16px; 
-            margin-top: 32px; 
-            display: flex; 
-            justify-content: space-between; 
-            flex-wrap: wrap; 
-            gap: 12px; 
-            color: var(--text-secondary); 
-            font-size: 0.85rem; 
+        .footer {
+            border-top: 1px solid rgba(255,255,255,0.04);
+            padding: 28px 0 16px;
+            margin-top: 32px;
+            display: flex; justify-content: space-between;
+            flex-wrap: wrap; gap: 12px;
+            color: var(--text-secondary); font-size: 0.85rem;
         }
         .social-links { display: flex; gap: 18px; }
-        .social-links a { 
-            color: var(--text-secondary); 
-            font-size: 1.3rem; 
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2); 
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.3rem;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
             position: relative;
         }
         .social-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px; left: 50%;
+            content: ''; position: absolute; bottom: -4px; left: 50%;
             width: 0; height: 2px;
             background: var(--accent-gradient);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
-        .social-links a:hover::after {
-            width: 100%;
+        .social-links a:hover::after { width: 100%; }
+        .social-links a:hover { color: #fff; transform: translateY(-4px) scale(1.1); }
+
+        .status-dot {
+            display: inline-block; width: 9px; height: 9px;
+            border-radius: 50%; background: #00ff88;
+            margin-right: 6px;
+            animation: pulse-dot 2s infinite;
         }
-        .social-links a:hover { 
-            color: #fff; 
-            transform: translateY(-4px) scale(1.1); 
+        @keyframes pulse-dot {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
-        .status-dot { 
-            display: inline-block; 
-            width: 9px; 
-            height: 9px; 
-            border-radius: 50%; 
-            background: #00ff88; 
-            margin-right: 6px; 
-            animation: pulse-dot 2s infinite; 
+        /* ---------- REVEAL ---------- */
+        .reveal {
+            opacity: 0; transform: translateY(40px) scale(0.96);
+            transition: all 0.8s cubic-bezier(0.2, 0.9, 0.3, 1.2);
         }
-        @keyframes pulse-dot { 
-            0% { opacity: 1; transform: scale(1); } 
-            50% { opacity: 0.5; transform: scale(0.8); box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); } 
-            100% { opacity: 1; transform: scale(1); } 
-        }
-
-        /* ---------- REVEAL (Enhanced) ---------- */
-        .reveal { 
-            opacity: 0; 
-            transform: translateY(40px) scale(0.96); 
-            transition: all 0.8s cubic-bezier(0.2, 0.9, 0.3, 1.2); 
-        }
-        .reveal.visible { 
-            opacity: 1; 
-            transform: translateY(0) scale(1); 
-        }
+        .reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
 
         /* ---------- RESPONSIVE ---------- */
-        @media (max-width: 820px) {
-            .hero { flex-direction: column-reverse; text-align: center; gap: 24px; padding: 20px 0; }
-            .hero .tagline { margin-left: auto; margin-right: auto; }
-            .hero-buttons { justify-content: center; }
-            .photo-circle { width: 140px; height: 140px; }
-            .section-title::after { left: 50%; transform: translateX(-50%); }
-        }
         @media (max-width: 600px) {
             .header { flex-direction: column; align-items: center; text-align: center; }
             .nav-links { gap: 14px; justify-content: center; font-size: 0.8rem; }
             .stats { grid-template-columns: 1fr 1fr; padding: 16px; }
             .skills-grid { grid-template-columns: 1fr 1fr; }
             .achievement-grid { grid-template-columns: 1fr 1fr; }
-            .photo-circle { width: 120px; height: 120px; }
             .btn { padding: 10px 20px; font-size: 0.85rem; }
-            .exp-card { padding: 18px 16px; }
+            .exp-card, .project-card { padding: 18px 16px; }
             .container { padding: 0 14px 40px; }
             .footer { flex-direction: column; align-items: center; text-align: center; }
+            .stack-icons { gap: 16px 20px; }
+            .stack-icon i { font-size: 1.6rem; }
+            .contact-bar { padding: 14px 16px; gap: 8px 16px; font-size: 0.82rem; }
         }
     </style>
 </head>
@@ -753,6 +638,7 @@
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
         <div class="orb-trail orb-trail-1"></div>
         <div class="orb-trail orb-trail-2"></div>
     </div>
@@ -763,6 +649,7 @@
         <header class="header">
             <div class="logo">&#123; dheeraj.dev &#125;</div>
             <nav class="nav-links">
+                <a href="#stack">Stack</a>
                 <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
@@ -771,21 +658,34 @@
         </header>
 
         <section class="hero">
-            <div class="hero-content">
-                <div class="hero-badge"><span class="status-dot"></span> Open to opportunities</div>
-                <h1>Dheeraj <span class="highlight">Dev</span></h1>
-                <div class="subtitle">Cloud DevOps Engineer</div>
-                <p class="tagline">AWS · Azure DevOps · CI/CD · Automation · 2 years of experience managing 100+ hybrid cloud environments.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> Projects</a>
-                    <a href="#" class="btn btn-download" id="downloadResume"><i class="fas fa-file-pdf"></i> Download Resume</a>
-                    <a href="#experience" class="btn btn-outline"><i class="fas fa-briefcase"></i> Experience</a>
-                </div>
+            <div class="hero-badge"><span class="status-dot"></span> Open to opportunities</div>
+            <h1>Dheeraj <span class="highlight">Dev</span></h1>
+            <div class="subtitle">Cloud DevOps Engineer</div>
+            <p class="tagline">
+                Building cloud-native infrastructure with Docker, Kubernetes, and CI/CD automation.
+                Two years managing 100+ hybrid cloud environments across AWS and on-premises.
+            </p>
+
+            <!-- CONTACT BAR -->
+            <div class="contact-bar">
+                <a class="contact-item" href="tel:+919846416440">
+                    <i class="fas fa-mobile-alt"></i> +91-98464 16440
+                </a>
+                <a class="contact-item" href="mailto:dheerajdev17@gmail.com">
+                    <i class="fas fa-envelope"></i> dheerajdev17@gmail.com
+                </a>
+                <a class="contact-item" href="https://linkedin.com/in/dheeraj-dev/" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i> linkedin.com/in/dheeraj-dev
+                </a>
+                <a class="contact-item" href="https://github.com/dheerajdev17" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> github.com/dheerajdev17
+                </a>
             </div>
-            <div class="hero-photo">
-                <div class="photo-circle">
-                    <img src="https://ui-avatars.com/api/?name=Dheeraj+Dev&background=111927&color=00d4ff&size=180&bold=true" alt="Dheeraj Dev" />
-                </div>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> Projects</a>
+                <a href="#" class="btn btn-download" id="downloadResume"><i class="fas fa-file-pdf"></i> Download Resume</a>
+                <a href="#experience" class="btn btn-outline"><i class="fas fa-briefcase"></i> Experience</a>
             </div>
         </section>
 
@@ -796,21 +696,49 @@
             <div class="stat-item"><div class="number">70%</div><div class="label">Setup Time Reduced</div></div>
         </div>
 
+        <!-- ===== TECH STACK BANNER ===== -->
+        <section id="stack">
+            <div class="stack-banner reveal">
+                <h3>Core Tech Stack</h3>
+                <div class="stack-icons">
+                    <div class="stack-icon si-docker"><i class="fab fa-docker"></i><span class="name">Docker</span></div>
+                    <div class="stack-icon si-k8s"><i class="fas fa-dharmachakra"></i><span class="name">Kubernetes</span></div>
+                    <div class="stack-icon si-k3s"><i class="fas fa-cube"></i><span class="name">K3s</span></div>
+                    <div class="stack-icon si-helm"><i class="fas fa-ship"></i><span class="name">Helm</span></div>
+                    <div class="stack-icon si-github"><i class="fab fa-github"></i><span class="name">GitHub</span></div>
+                    <div class="stack-icon si-gha"><i class="fas fa-code-branch"></i><span class="name">GitHub Actions</span></div>
+                    <div class="stack-icon si-jenkins"><i class="fab fa-jenkins"></i><span class="name">Jenkins</span></div>
+                    <div class="stack-icon si-azure"><i class="fab fa-microsoft"></i><span class="name">Azure DevOps</span></div>
+                    <div class="stack-icon si-aws"><i class="fab fa-aws"></i><span class="name">AWS</span></div>
+                    <div class="stack-icon si-terraform"><i class="fas fa-layer-group"></i><span class="name">Terraform</span></div>
+                    <div class="stack-icon si-ansible"><i class="fas fa-cogs"></i><span class="name">Ansible</span></div>
+                    <div class="stack-icon si-prometheus"><i class="fas fa-fire"></i><span class="name">Prometheus</span></div>
+                    <div class="stack-icon si-grafana"><i class="fas fa-chart-line"></i><span class="name">Grafana</span></div>
+                    <div class="stack-icon si-nginx"><i class="fas fa-server"></i><span class="name">Nginx</span></div>
+                    <div class="stack-icon si-linux"><i class="fab fa-linux"></i><span class="name">Linux</span></div>
+                </div>
+            </div>
+        </section>
+
         <section id="experience">
             <h2 class="section-title reveal">Work Experience</h2>
-            <p class="section-sub reveal">Building scalable, automated infrastructure for enterprise clients.</p>
+            <p class="section-sub reveal">Building scalable, containerized infrastructure for enterprise clients.</p>
 
             <div class="exp-card reveal">
                 <div class="exp-header">
                     <div><h3>Cloud DevOps Engineer</h3><span class="company">Logiology Software Solutions</span></div>
                     <span class="date">Aug 2025 – Present</span>
                 </div>
-                <div class="exp-tags"><span>AWS</span><span>Azure DevOps</span><span>Windows Server</span><span>SQL Server</span><span>PowerShell</span><span>CI/CD</span></div>
+                <div class="exp-tags">
+                    <span>AWS</span><span>Azure DevOps</span><span>Windows Server</span>
+                    <span>SQL Server</span><span>PowerShell</span><span>CI/CD</span>
+                    <span>Docker</span><span>Terraform</span>
+                </div>
                 <ul>
-                    <li>Manage 100+ hybrid AWS/on‑premises ERP environments across EC2, Lightsail, RDS, S3, and Windows Server.</li>
-                    <li>Designed end‑to‑end CI/CD pipelines in Azure DevOps with approval workflows, enabling simultaneous updates across 60–70+ production servers.</li>
-                    <li>Performed zero‑downtime cloud migrations (Lightsail → EC2), designed VPC with private subnets, CloudFront + WAF with rate limiting and bot protection.</li>
-                    <li>Built Logiology Enterprise Control Center – WPF (.NET 8.0) tool for automated installation, updates, and database deployment.</li>
+                    <li>Manage 100+ hybrid AWS/on-premises ERP environments across EC2, Lightsail, RDS, S3, and Windows Server.</li>
+                    <li>Designed end-to-end CI/CD pipelines in Azure DevOps with approval workflows, enabling simultaneous updates across 60–70+ production servers.</li>
+                    <li>Performed zero-downtime cloud migrations (Lightsail → EC2), designed VPC with private subnets, CloudFront + WAF with rate limiting and bot protection.</li>
+                    <li>Built <strong>Logiology Enterprise Control Center</strong> — WPF (.NET 8.0) tool for automated installation, updates, and database deployment.</li>
                     <li>Automated database operations using PowerShell and YAML pipelines; optimized AWS Backup and RDS, saving 40% in monthly cloud costs.</li>
                 </ul>
             </div>
@@ -820,7 +748,10 @@
                     <div><h3>DevOps Engineer Intern</h3><span class="company">StarAgile</span></div>
                     <span class="date">Apr 2024 – Jul 2024</span>
                 </div>
-                <div class="exp-tags"><span>Jenkins</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>Prometheus</span><span>Grafana</span></div>
+                <div class="exp-tags">
+                    <span>Jenkins</span><span>Docker</span><span>Kubernetes</span>
+                    <span>Terraform</span><span>Prometheus</span><span>Grafana</span>
+                </div>
                 <ul>
                     <li>Automated Jenkins CI/CD pipelines → 30% faster deployments.</li>
                     <li>Used Docker/Kubernetes → 20% scalability/efficiency gain.</li>
@@ -831,38 +762,72 @@
 
         <section id="skills">
             <h2 class="section-title reveal">Technical Skills</h2>
-            <p class="section-sub reveal">Core competencies across cloud, automation, and infrastructure.</p>
+            <p class="section-sub reveal">Deep focus on containers, orchestration, and CI/CD automation.</p>
 
             <div class="skills-grid">
+                <div class="skill-chip reveal"><i class="fab fa-docker"></i><div class="name">Docker</div><div class="cat">Multi-stage builds, Compose</div></div>
+                <div class="skill-chip reveal"><i class="fas fa-dharmachakra"></i><div class="name">Kubernetes</div><div class="cat">Deployments, Services, Ingress</div></div>
+                <div class="skill-chip reveal"><i class="fas fa-cube"></i><div class="name">K3s</div><div class="cat">Lightweight K8s, Edge</div></div>
+                <div class="skill-chip reveal"><i class="fas fa-ship"></i><div class="name">Helm</div><div class="cat">Charts, Releases</div></div>
+                <div class="skill-chip reveal"><i class="fas fa-code-branch"></i><div class="name">GitHub Actions</div><div class="cat">CI/CD, Matrix builds</div></div>
+                <div class="skill-chip reveal"><i class="fab fa-jenkins"></i><div class="name">Jenkins</div><div class="cat">Pipelines, Agents</div></div>
+                <div class="skill-chip reveal"><i class="fab fa-microsoft"></i><div class="name">Azure DevOps</div><div class="cat">Pipelines, Release gates</div></div>
                 <div class="skill-chip reveal"><i class="fab fa-aws"></i><div class="name">AWS</div><div class="cat">EC2, RDS, S3, VPC, WAF</div></div>
-                <div class="skill-chip reveal"><i class="fab fa-microsoft"></i><div class="name">Azure DevOps</div><div class="cat">Pipelines, Agents</div></div>
-                <div class="skill-chip reveal"><i class="fas fa-database"></i><div class="name">SQL Server</div><div class="cat">Backup, Tuning, Automation</div></div>
-                <div class="skill-chip reveal"><i class="fas fa-terminal"></i><div class="name">PowerShell / Bash</div><div class="cat">Automation, Scripting</div></div>
-                <div class="skill-chip reveal"><i class="fab fa-docker"></i><div class="name">Docker / K8s</div><div class="cat">Containerization, Orchestration</div></div>
-                <div class="skill-chip reveal"><i class="fas fa-code-branch"></i><div class="name">CI/CD</div><div class="cat">Jenkins, Azure Pipelines</div></div>
-                <div class="skill-chip reveal"><i class="fas fa-cloud"></i><div class="name">Terraform</div><div class="cat">IaC, Ansible</div></div>
-                <div class="skill-chip reveal"><i class="fas fa-eye"></i><div class="name">Monitoring</div><div class="cat">CloudWatch, Prometheus, Grafana</div></div>
+                <div class="skill-chip reveal"><i class="fas fa-layer-group"></i><div class="name">Terraform</div><div class="cat">IaC, Modules, State</div></div>
+                <div class="skill-chip reveal"><i class="fas fa-cogs"></i><div class="name">Ansible</div><div class="cat">Playbooks, Roles</div></div>
+                <div class="skill-chip reveal"><i class="fas fa-fire"></i><div class="name">Prometheus</div><div class="cat">Metrics, Alerting</div></div>
+                <div class="skill-chip reveal"><i class="fas fa-chart-line"></i><div class="name">Grafana</div><div class="cat">Dashboards, Panels</div></div>
+                <div class="skill-chip reveal"><i class="fas fa-terminal"></i><div class="name">Bash / PowerShell</div><div class="cat">Automation, Scripting</div></div>
+                <div class="skill-chip reveal"><i class="fas fa-database"></i><div class="name">SQL Server / MySQL</div><div class="cat">Backup, Tuning, HA</div></div>
+                <div class="skill-chip reveal"><i class="fab fa-linux"></i><div class="name">Linux</div><div class="cat">Ubuntu, Amazon Linux</div></div>
             </div>
         </section>
 
         <section id="projects">
             <h2 class="section-title reveal">Key Projects</h2>
-            <p class="section-sub reveal">Real‑world solutions that drive efficiency and reliability.</p>
+            <p class="section-sub reveal">Real-world solutions that drive efficiency and reliability.</p>
+
+            <!-- FEATURED: OPERIX -->
+            <div class="project-card reveal">
+                <span class="badge-featured">Flagship</span>
+                <h4>OPERIX — Multi-Tenant SaaS Platform</h4>
+                <div class="tech-stack">
+                    Spring Boot · Spring Security · JWT · MySQL · Flyway · React · TypeScript ·
+                    Vite · Tailwind CSS · Docker · Docker Compose · Docker Hub · GitHub Actions ·
+                    AWS EC2 · Nginx · Caddy · REST APIs
+                </div>
+                <p>
+                    A production-grade multi-tenant SaaS built from the ground up for rental and
+                    event-management businesses. Each client gets a fully isolated database,
+                    provisioned automatically on signup. Features end-to-end self-service
+                    onboarding with email verification, subscription billing with GST and trial
+                    enforcement, role-based access control, an audit trail of every action,
+                    admin impersonation for support, and a live system-health dashboard for
+                    the vendor control plane. Modules span customers, quotations, bookings,
+                    events, projects, transport, inventory, workforce, and finance — all
+                    exposed through a unified web interface.
+                </p>
+            </div>
 
             <div class="project-card reveal">
-                <h4>Logiology Enterprise Control Center</h4>
-                <div class="tech-stack">WPF · .NET 8.0 · AWS API</div>
-                <p>Desktop tool with 6 modules for system check, software/database deployment, and version management. Integrated with backend API for secure file downloads. Reduced new client setup time by 70%.</p>
+                <h4>Enterprise Control Center</h4>
+                <div class="tech-stack">WPF · .NET 8.0 · Windows Automation · PowerShell</div>
+                <p>
+                    A desktop control center built to automate enterprise-wide software and
+                    database deployments across distributed environments. Reduced new-client
+                    environment setup time by 70% through scripted installation, version
+                    management, and health-check automation.
+                </p>
             </div>
+
             <div class="project-card reveal">
-                <h4>Finance Me – Banking Microservice</h4>
+                <h4>Finance Me — Banking Microservice CI/CD</h4>
                 <div class="tech-stack">Jenkins · Docker · Terraform · AWS · Prometheus · Grafana</div>
-                <p>Built CI/CD pipeline with secure AWS VPCs, subnets, security groups, and load balancers. Integrated monitoring → 20% less unexpected downtime.</p>
-            </div>
-            <div class="project-card reveal">
-                <h4>AWS Infrastructure Migration</h4>
-                <div class="tech-stack">Lightsail → EC2 · VPC · CloudFront · WAF</div>
-                <p>Planned and executed zero‑downtime migration. Designed VPC with public/private subnets, CloudFront CDN with custom domain/SSL, AWS WAF with rate limiting, and automated backup with 2‑day retention.</p>
+                <p>
+                    Built a full CI/CD pipeline with secure AWS VPCs, subnets, security groups,
+                    and load balancers. Integrated monitoring and alerting, reducing unexpected
+                    downtime by 20%.
+                </p>
             </div>
         </section>
 
@@ -870,29 +835,30 @@
             <h2 class="section-title reveal">Achievements &amp; Certifications</h2>
             <div class="achievement-grid">
                 <div class="achieve-item reveal"><i class="fas fa-robot"></i><div class="value">80%</div><div class="desc">Manual deployment effort reduced</div></div>
-                <div class="achieve-item reveal"><i class="fas fa-cloud-upload-alt"></i><div class="value">Zero‑downtime</div><div class="desc">Production cloud migration</div></div>
+                <div class="achieve-item reveal"><i class="fas fa-cloud-upload-alt"></i><div class="value">Zero-downtime</div><div class="desc">Production cloud migration</div></div>
                 <div class="achieve-item reveal"><i class="fas fa-coins"></i><div class="value">40%</div><div class="desc">Monthly cloud cost savings</div></div>
                 <div class="achieve-item reveal"><i class="fas fa-server"></i><div class="value">70%</div><div class="desc">Faster client environment setup</div></div>
             </div>
             <div class="certs reveal">
-                <span class="cert-badge"><i class="fas fa-certificate"></i> Certified DevOps Engineer – StarAgile (Aug 2024)</span>
-                <span class="cert-badge"><i class="fas fa-certificate"></i> DevOps Fundamentals – IBM (May 2024)</span>
-                <span class="cert-badge"><i class="fas fa-certificate"></i> Certified Java Programmer – Camerinfolks (Apr 2023)</span>
+                <span class="cert-badge"><i class="fas fa-certificate"></i> Certified DevOps Engineer — StarAgile (Aug 2024)</span>
+                <span class="cert-badge"><i class="fas fa-certificate"></i> DevOps Fundamentals — IBM (May 2024)</span>
+                <span class="cert-badge"><i class="fas fa-certificate"></i> Certified Java Programmer — Camerinfolks (Apr 2023)</span>
             </div>
         </section>
 
         <footer class="footer">
-            <div><span style="font-weight:600; color:#fff;">Dheeraj Dev</span> &middot; Cloud DevOps Engineer &middot; Available for opportunities</div>
+            <div><span style="font-weight:600; color:#fff;">Dheeraj Dev</span> &middot; Cloud DevOps Engineer</div>
             <div class="social-links">
-                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/dheerajdev17" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/dheeraj-dev/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:dheerajdev17@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+919846416440" aria-label="Phone"><i class="fas fa-mobile-alt"></i></a>
             </div>
         </footer>
     </div>
 
     <script>
-        // ===== PARTICLES (Enhanced with more dynamics) =====
+        // ===== PARTICLES =====
         (function initParticles() {
             const canvas = document.getElementById('particles-canvas');
             const ctx = canvas.getContext('2d');
@@ -900,11 +866,11 @@
             const particles = [];
             const COUNT = 80;
 
-            function resize() { 
-                w = canvas.width = window.innerWidth; 
-                h = canvas.height = window.innerHeight; 
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
             }
-            window.addEventListener('resize', resize); 
+            window.addEventListener('resize', resize);
             resize();
 
             class Particle {
@@ -947,7 +913,7 @@
                             ctx.beginPath();
                             ctx.moveTo(particles[i].x, particles[i].y);
                             ctx.lineTo(particles[j].x, particles[j].y);
-                            const opacity = 0.08 * (1 - dist / 150) * 
+                            const opacity = 0.08 * (1 - dist / 150) *
                                 (0.7 + 0.3 * Math.sin(particles[i].pulse + particles[j].pulse));
                             ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
                             ctx.lineWidth = 0.6;
@@ -966,54 +932,58 @@
             animate();
         })();
 
-        // ===== REVEAL ON SCROLL (Enhanced) =====
+        // ===== REVEAL ON SCROLL =====
         (function revealOnScroll() {
             const reveals = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver((entries) => { 
-                entries.forEach(entry => { 
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                     }
-                }); 
+                });
             }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
             reveals.forEach(el => observer.observe(el));
         })();
 
         // ===== SMOOTH SCROLL =====
-        document.querySelectorAll('.nav-links a').forEach(link => { 
-            link.addEventListener('click', function(e) { 
-                e.preventDefault(); 
-                const target = document.querySelector(this.getAttribute('href')); 
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
-            }); 
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
         });
 
         // ===== RESUME DOWNLOAD =====
         document.getElementById('downloadResume').addEventListener('click', function(e) {
             e.preventDefault();
-            const resumeContent = `Dheeraj Dev
+            const resumeContent = `DHEERAJ DEV
 Cloud DevOps Engineer
-Email: dheeraj.dev@email.com | Phone: +91-XXXXX-XXXXX
+Mobile: +91-9846416440 | E-Mail: dheerajdev17@gmail.com
+LinkedIn: linkedin.com/in/dheeraj-dev/ | GitHub: github.com/dheerajdev17
 
 PROFESSIONAL SUMMARY
-DevOps Engineer with 2 years of experience in AWS, Azure DevOps, CI/CD automation, and system reliability. Expertise in managing 100+ hybrid cloud environments, infrastructure as code, and automation scripting.
+DevOps Engineer with 2 years of experience in AWS, Azure DevOps, Docker,
+Kubernetes, and CI/CD automation. Expertise in managing 100+ hybrid cloud
+environments, container orchestration, infrastructure as code, and automation
+scripting.
 
 TECHNICAL SKILLS
+• Containers: Docker, Kubernetes, K3s, Helm
+• CI/CD: GitHub Actions, Jenkins, Azure DevOps Pipelines
 • Cloud: AWS (EC2, RDS, S3, VPC, IAM, Route 53, CloudWatch, WAF, CloudFront)
-• DevOps: Azure DevOps, Jenkins, CI/CD Pipelines, Git, GitHub
 • IaC: Terraform, Ansible
 • Scripting: PowerShell, Bash, Python, YAML
-• Containers: Docker, Kubernetes
-• Databases: SQL Server, PostgreSQL
-• Monitoring: CloudWatch, Prometheus, Grafana
-• OS: Linux, Windows Server
+• Databases: SQL Server, MySQL, PostgreSQL
+• Monitoring: Prometheus, Grafana, CloudWatch
+• OS: Linux (Ubuntu, Amazon Linux), Windows Server
 
 EXPERIENCE
 Cloud DevOps Engineer | Logiology Software Solutions | Aug 2025 – Present
 • Manage 100+ hybrid AWS/on-premises ERP environments
 • Designed CI/CD pipelines in Azure DevOps with approval workflows
-• Led zero-downtime Lightsail→EC2 migration with VPC, CloudFront, WAF
-• Built WPF tool reducing new client setup time by 70%
+• Led zero-downtime Lightsail → EC2 migration with VPC, CloudFront, WAF
+• Built Enterprise Control Center reducing new client setup time by 70%
 • Optimized AWS Backup and RDS, saving 40% in monthly cloud costs
 
 DevOps Engineer Intern | StarAgile | Apr 2024 – Jul 2024
@@ -1022,9 +992,14 @@ DevOps Engineer Intern | StarAgile | Apr 2024 – Jul 2024
 • Built AWS infra with Terraform; set up Prometheus/Grafana monitoring
 
 PROJECTS
-• Logiology Enterprise Control Center – WPF .NET 8.0, AWS API
-• Finance Me – Banking Microservice – Jenkins, Docker, Terraform, AWS
-• AWS Infrastructure Migration – Lightsail→EC2, VPC, CloudFront, WAF
+• OPERIX — Multi-Tenant SaaS Platform (Flagship)
+  Spring Boot · Spring Security · JWT · MySQL · Flyway · React · TypeScript ·
+  Vite · Tailwind CSS · Docker · Docker Compose · Docker Hub · GitHub Actions ·
+  AWS EC2 · Nginx · Caddy · REST APIs
+
+• Enterprise Control Center — WPF .NET 8.0, Windows Automation, PowerShell
+
+• Finance Me — Banking Microservice CI/CD — Jenkins, Docker, Terraform, AWS
 
 CERTIFICATIONS
 • Certified DevOps Engineer – StarAgile (Aug 2024)
@@ -1042,22 +1017,11 @@ English (Fluent), Malayalam (Native), Tamil (Proficient), Hindi (Proficient)`;
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'Dheeraj_Dev_Resume.txt';
+            a.download = 'Dheeraj_Dev_Cloud_DevOps_Engineer_Resume.txt';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-        });
-
-        // ===== PARALLAX EFFECT ON PHOTO =====
-        document.querySelector('.photo-circle').addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width - 0.5;
-            const y = (e.clientY - rect.top) / rect.height - 0.5;
-            this.style.transform = `perspective(500px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) scale(1.02)`;
-        });
-        document.querySelector('.photo-circle').addEventListener('mouseleave', function() {
-            this.style.transform = 'perspective(500px) rotateY(0deg) rotateX(0deg) scale(1)';
         });
     </script>
 </body>
